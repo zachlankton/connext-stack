@@ -1,0 +1,7 @@
+#Ignore artifacts
+.next
+cypress/downloads
+cypress/videos
+cypress/support
+node_modules
+build
