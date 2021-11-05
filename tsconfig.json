@@ -19,7 +19,7 @@
       "@/components/*": ["components/*"],
       "@/db/*": ["db/*"],
       "@/models/*": ["models/*"],
-      "@/store/*": ["store/*"],
+      "@/store/*": ["store/*"]
     }
   },
   "ts-node": {

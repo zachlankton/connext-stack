@@ -1,5 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "next",
+    "prettier",
+    "plugin:import/recommended",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "@next/next/no-css-tags": "off"
   }

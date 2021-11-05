@@ -5,9 +5,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "pretty": "prettier --write .",
+    "pretty-check": "prettier --check .",
     "seed": "ts-node db/seed.ts",
     "cypress": "cypress open",
+    "test-e2e": "cypress run",
     "test": "jest --watch"
   },
   "dependencies": {
@@ -25,6 +28,9 @@
     "cypress": "^8.7.0",
     "eslint": "7",
     "eslint-config-next": "12.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.25.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "prettier": "2.4.1",
