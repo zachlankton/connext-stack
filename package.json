@@ -2,7 +2,7 @@
   "name": "mmp-manage",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "nyc --silent next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -50,6 +50,19 @@
     "typescript": "4.4.4"
   },
   "nyc": {
-    "report-dir": "coverage_cypress"
+    "report-dir": "coverage_cypress",
+    "include": [
+      "**/*.{js,jsx,ts,tsx}",
+      "!**/*.d.ts",
+      "!**/node_modules/**",
+      "!**/.next/**",
+      "!**/cypress/**",
+      "!**/coverage/**",
+      "!jest.config.js",
+      "!next.config.js",
+      "!**/mergeCoverage.js",
+      "!**/__coverage__.js",
+      "!**/__reset_coverage__.js"
+    ]
   }
 }

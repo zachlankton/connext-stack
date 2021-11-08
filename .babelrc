@@ -14,7 +14,10 @@
               "!**/cypress/**",
               "!**/coverage/**",
               "!jest.config.js",
-              "!next.config.js"
+              "!next.config.js",
+              "!**/mergeCoverage.js",
+              "!**/__coverage__.js",
+              "!**/__reset_coverage__.js"
             ]
           }
         ]

@@ -21,7 +21,7 @@ fs.copyFileSync(
   "coverage_jest/coverage-final.json",
   `${REPORTS_FOLDER}/from-jest.json`
 );
-fs.emptyDirSync(".nyc_output");
+//fs.emptyDirSync(".nyc_output");
 fs.emptyDirSync(FINAL_OUTPUT_FOLDER);
 // Run "nyc merge" inside the reports folder, merging the two coverage files into one,
 // then generate the final report on the coverage folder
@@ -33,6 +33,6 @@ run([`nyc report --reporter lcov --report-dir ${FINAL_OUTPUT_FOLDER}`]);
 
 fs.rmSync("coverage_cypress", { recursive: true });
 fs.rmSync("coverage_jest", { recursive: true });
-fs.rmSync(".nyc_output", { recursive: true });
+// fs.rmSync(".nyc_output", { recursive: true });
 fs.rmSync("reports", { recursive: true });
 fs.rmSync("coverage.json", { recursive: true });
