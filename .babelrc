@@ -1,0 +1,24 @@
+{
+  "presets": ["next/babel"],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "istanbul",
+          {
+            "include": [
+              "**/*.{js,jsx,ts,tsx}",
+              "!**/*.d.ts",
+              "!**/node_modules/**",
+              "!**/.next/**",
+              "!**/cypress/**",
+              "!**/coverage/**",
+              "!jest.config.js",
+              "!next.config.js"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

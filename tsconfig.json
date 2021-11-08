@@ -16,10 +16,10 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/db/*": ["db/*"],
-      "@/models/*": ["models/*"],
-      "@/store/*": ["store/*"]
+      "@/components/*": ["src/components/*"],
+      "@/db/*": ["src/db/*"],
+      "@/models/*": ["src/models/*"],
+      "@/store/*": ["src/store/*"]
     }
   },
   "ts-node": {
@@ -28,6 +28,6 @@
       "module": "CommonJS"
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "db/seed.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/db/seed.ts"],
   "exclude": ["node_modules"]
 }

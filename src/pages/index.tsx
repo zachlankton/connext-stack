@@ -1,14 +1,19 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import User from "src/components/userSignIn";
+import { useAppSelector } from "src/store/hooks";
 
 const Home: NextPage = () => {
+  const user = useAppSelector((state) => state.userSession.user);
   return (
     <div className={styles.container}>
+      <User />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <p>Hello {user?.email}</p>
 
         <p className={styles.description}>
           Get started by editing{" "}

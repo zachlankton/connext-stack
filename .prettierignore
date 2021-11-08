@@ -3,5 +3,10 @@
 cypress/downloads
 cypress/videos
 cypress/support
+coverage
+coverage_cypress
+coverage_jest
+reports
+.nyc_output
 node_modules
 build
