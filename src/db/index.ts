@@ -1,7 +1,6 @@
 import { Ottoman, SearchConsistency } from "ottoman";
 
 console.log("setting up db...");
-console.log(process.env);
 const cnxStr = process.env.COUCHBASE_CONNECTION as string;
 const ottoman = new Ottoman({
   consistency: SearchConsistency.LOCAL,
