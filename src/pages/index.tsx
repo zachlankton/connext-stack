@@ -3,9 +3,10 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import User from "src/components/userSignIn";
 import { useAppSelector } from "src/store/hooks";
+import { getUser } from "@/store/slices/userSessionSlice";
 
 const Home: NextPage = () => {
-  const user = useAppSelector((state) => state.userSession.user);
+  const user = useAppSelector((state) => getUser(state));
   return (
     <div className={styles.container}>
       <User />
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <p>Hello {user?.email}</p>
+        <p className="current-user">Hello {user?.email}</p>
 
         <p className={styles.description}>
           Get started by editing{" "}

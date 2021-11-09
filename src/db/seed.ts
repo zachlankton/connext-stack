@@ -1,8 +1,9 @@
+require("dotenv").config({ path: `.env.local` });
 import db from "./index";
 import { start } from "ottoman";
 import Models from "../models/index";
-import { exit } from "process";
 const { User } = Models;
+import { exit } from "process";
 import readline from "readline";
 
 function askQuestion(query: string): Promise<string> {
@@ -34,10 +35,11 @@ const seed = async () => {
     await start();
     await User.removeMany();
     const newUser = new User({
+      userid: "test",
       firstName: "Zachary",
       lastName: "Lankton",
-      userId: "1234",
       username: "zachlankton",
+      phone: "667-4516",
       email: "zach@mmpmg.com",
     });
     await newUser.save();

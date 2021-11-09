@@ -10,7 +10,7 @@ module.exports = {
     "!next.config.js",
     "!**/mergeCoverage.js",
     "!**/__coverage__.js",
-    "!**/__reset_coverage__.js",
+    "!**/seed.ts",
   ],
   coverageDirectory: "coverage_jest",
   coverageReporters: ["json"],

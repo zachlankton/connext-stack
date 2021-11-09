@@ -1,8 +1,11 @@
-import { Ottoman } from "ottoman";
+import { Ottoman, SearchConsistency } from "ottoman";
 
 console.log("setting up db...");
-const cnxStr = "couchbase://localhost/mmp@Administrator:1234567890";
-const ottoman = new Ottoman();
+console.log(process.env);
+const cnxStr = process.env.COUCHBASE_CONNECTION as string;
+const ottoman = new Ottoman({
+  consistency: SearchConsistency.LOCAL,
+});
 
 const db = {
   connect: async () => {

@@ -13,16 +13,20 @@ export default function User() {
 
   const SignOutComp = ({ session }: { session: Session }) => (
     <>
-      Signed in as {session.user?.email}
+      <span className="signed-in-as">Signed in as {session.user?.email}</span>
       <br />
-      <button onClick={() => signOut()}>Sign out</button>
+      <button className="sign-out" onClick={() => signOut()}>
+        Sign out
+      </button>
     </>
   );
 
   const SignInComp = () => (
     <>
       Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <button className="sign-in" onClick={() => signIn()}>
+        Sign in
+      </button>
     </>
   );
 
