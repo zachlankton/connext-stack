@@ -8,9 +8,39 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+button,
+.button,
+.btn {
+  transition: all 200ms;
+  box-shadow: inset 0px 1px 5px 0px #ffffff7a;
+  border-radius: 6px;
+  background-color: rgb(216, 216, 216);
+  border: 0px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+button:hover,
+.button:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+button:active,
+.button:active,
+.btn:active {
+  position: relative;
+  top: 1px;
 }

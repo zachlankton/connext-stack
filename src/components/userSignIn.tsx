@@ -15,7 +15,7 @@ export default function User() {
     <>
       <span className="signed-in-as">Signed in as {session.user?.email}</span>
       <br />
-      <button className="sign-out" onClick={() => signOut()}>
+      <button className="sign-out blue-3" onClick={() => signOut()}>
         Sign out
       </button>
     </>
@@ -24,7 +24,7 @@ export default function User() {
   const SignInComp = () => (
     <>
       Not signed in <br />
-      <button className="sign-in" onClick={() => signIn()}>
+      <button className="sign-in blue-3" onClick={() => signIn()}>
         Sign in
       </button>
     </>
