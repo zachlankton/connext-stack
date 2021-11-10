@@ -5,4 +5,7 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["lh3.googleusercontent.com"],
+  },
 };

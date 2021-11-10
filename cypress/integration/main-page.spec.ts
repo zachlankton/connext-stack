@@ -4,10 +4,17 @@ describe("Page Tests", () => {
     cy.request("http://localhost:3000/").its("status").should("equal", 200);
   });
 
+  it("Docs/Colors Page Loads", () => {
+    cy.visit("http://localhost:3000/docs/colors");
+    cy.request("http://localhost:3000/docs/colors")
+      .its("status")
+      .should("equal", 200);
+  });
+
   it("Next Auth Sign In", () => {
     const username = Cypress.env("GOOGLE_USER");
     const password = Cypress.env("GOOGLE_PW");
-    const loginUrl = Cypress.env("SITE_NAME") + "/api/auth/signin";
+    const loginUrl = Cypress.env("SITE_NAME");
     const cookieName = Cypress.env("COOKIE_NAME");
     const socialLoginOptions = {
       username,
@@ -16,7 +23,7 @@ describe("Page Tests", () => {
       headless: true,
       logs: false,
       isPopup: false,
-      loginSelector: ".button",
+      loginSelector: ".sign-in",
       postLoginSelector: ".signed-in-as",
     };
 
@@ -41,15 +48,31 @@ describe("Page Tests", () => {
     });
   });
 
-  it("Signed In and Sign out", () => {
+  it("User Profile Navigation Test", () => {
     cy.intercept("/api/auth/session").as("getSession");
     cy.visit("http://localhost:3000");
+    cy.get(".signed-in-as").click();
+    cy.get(".user-profile-title").should("have.text", "User Profile");
+    cy.get("header>section.mid").click();
+    cy.url().should("include", "/");
+  });
+
+  it("Signed In and Sign out", () => {
+    cy.intercept("/api/auth/session").as("getSession");
+    cy.intercept("/api/auth/providers", (req) => {
+      req.redirect("/");
+    }).as("signInGoogle");
+    cy.visit("http://localhost:3000");
     cy.wait("@getSession");
-    cy.get(".signed-in-as").should("include.text", "@gmail.com");
-    cy.contains("Sign out").click();
+    cy.get(".signed-in-as")
+      .should("have.attr", "alt")
+      .and("include", "gmail.com");
+
+    cy.get(".sign-out").click();
     cy.wait("@getSession");
     cy.get(".sign-in").click();
-    cy.url().should("include", "/api/auth/signin");
+    cy.wait("@signInGoogle");
+    cy.url().should("include", "/");
     cy.clearCookies();
   });
 
