@@ -5,7 +5,6 @@ import { Provider as ReduxProvider } from "react-redux";
 import { store } from "src/store/index";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-  //console.log(process.env.NODE_ENV);
   return (
     <>
       <Head>
