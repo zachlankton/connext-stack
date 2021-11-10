@@ -1,0 +1,409 @@
+.grey-0 {
+  color: #000 !important;
+  background-color: #fbfbfb !important;
+}
+.grey-1 {
+  color: #000 !important;
+  background-color: #f1f1f2 !important;
+}
+.grey-2 {
+  color: #000 !important;
+  background-color: #e4e4e5 !important;
+}
+.grey-3 {
+  color: #000 !important;
+  background-color: #d6d6d8 !important;
+}
+.grey-4 {
+  color: #000 !important;
+  background-color: #c9c9cb !important;
+}
+.grey-5 {
+  color: #000 !important;
+  background-color: #a8a8ac !important;
+}
+.grey-6 {
+  color: #fff !important;
+  background-color: #959599 !important;
+}
+.grey-7 {
+  color: #fff !important;
+  background-color: #828287 !important;
+}
+.grey-8 {
+  color: #fff !important;
+  background-color: #6f6f73 !important;
+}
+.grey-9 {
+  color: #fff !important;
+  background-color: #5c5c60 !important;
+}
+
+.lime-0 {
+  color: #000 !important;
+  background-color: #fbfdf4 !important;
+}
+.lime-1 {
+  color: #000 !important;
+  background-color: #f2f7d9 !important;
+}
+.lime-2 {
+  color: #000 !important;
+  background-color: #e6efb3 !important;
+}
+.lime-3 {
+  color: #000 !important;
+  background-color: #d9e78d !important;
+}
+.lime-4 {
+  color: #000 !important;
+  background-color: #cddf68 !important;
+}
+.lime-5 {
+  color: #000 !important;
+  background-color: #b8d02c !important;
+}
+.lime-6 {
+  color: #fff !important;
+  background-color: #a3b927 !important;
+}
+.lime-7 {
+  color: #fff !important;
+  background-color: #8fa222 !important;
+}
+.lime-8 {
+  color: #fff !important;
+  background-color: #7a8b1d !important;
+}
+.lime-9 {
+  color: #fff !important;
+  background-color: #667419 !important;
+}
+
+.green-0 {
+  color: #000 !important;
+  background-color: #eafffa !important;
+}
+.green-1 {
+  color: #000 !important;
+  background-color: #b8ffee !important;
+}
+.green-2 {
+  color: #000 !important;
+  background-color: #70ffde !important;
+}
+.green-3 {
+  color: #000 !important;
+  background-color: #29ffcd !important;
+}
+.green-4 {
+  color: #fff !important;
+  background-color: #00e0ac !important;
+}
+.green-5 {
+  color: #fff !important;
+  background-color: #008a6a !important;
+}
+.green-6 {
+  color: #fff !important;
+  background-color: #007a5e !important;
+}
+.green-7 {
+  color: #fff !important;
+  background-color: #006b52 !important;
+}
+.green-8 {
+  color: #fff !important;
+  background-color: #005c46 !important;
+}
+.green-9 {
+  color: #fff !important;
+  background-color: #004d3b !important;
+}
+
+.cyan-0 {
+  color: #000 !important;
+  background-color: #f9fdfd !important;
+}
+.cyan-1 {
+  color: #000 !important;
+  background-color: #eaf8f9 !important;
+}
+.cyan-2 {
+  color: #000 !important;
+  background-color: #d5f2f4 !important;
+}
+.cyan-3 {
+  color: #000 !important;
+  background-color: #c0ebee !important;
+}
+.cyan-4 {
+  color: #000 !important;
+  background-color: #abe5e9 !important;
+}
+.cyan-5 {
+  color: #000 !important;
+  background-color: #78d5db !important;
+}
+.cyan-6 {
+  color: #000 !important;
+  background-color: #5bcbd3 !important;
+}
+.cyan-7 {
+  color: #fff !important;
+  background-color: #3dc2cb !important;
+}
+.cyan-8 {
+  color: #fff !important;
+  background-color: #30aab3 !important;
+}
+.cyan-9 {
+  color: #fff !important;
+  background-color: #288e95 !important;
+}
+
+.blue-0 {
+  color: #000 !important;
+  background-color: #e9f5ff !important;
+}
+.blue-1 {
+  color: #000 !important;
+  background-color: #b6ddff !important;
+}
+.blue-2 {
+  color: #000 !important;
+  background-color: #6cbaff !important;
+}
+.blue-3 {
+  color: #fff !important;
+  background-color: #2398ff !important;
+}
+.blue-4 {
+  color: #fff !important;
+  background-color: #0073d8 !important;
+}
+.blue-5 {
+  color: #fff !important;
+  background-color: #004581 !important;
+}
+.blue-6 {
+  color: #fff !important;
+  background-color: #003d72 !important;
+}
+.blue-7 {
+  color: #fff !important;
+  background-color: #003564 !important;
+}
+.blue-8 {
+  color: #fff !important;
+  background-color: #002e56 !important;
+}
+.blue-9 {
+  color: #fff !important;
+  background-color: #002647 !important;
+}
+
+.orange-0 {
+  color: #000 !important;
+  background-color: #fdf7f3 !important;
+}
+.orange-1 {
+  color: #000 !important;
+  background-color: #fae5d5 !important;
+}
+.orange-2 {
+  color: #000 !important;
+  background-color: #f4caac !important;
+}
+.orange-3 {
+  color: #000 !important;
+  background-color: #efb082 !important;
+}
+.orange-4 {
+  color: #000 !important;
+  background-color: #e99559 !important;
+}
+.orange-5 {
+  color: #fff !important;
+  background-color: #db6c1d !important;
+}
+.orange-6 {
+  color: #fff !important;
+  background-color: #c36019 !important;
+}
+.orange-7 {
+  color: #fff !important;
+  background-color: #ab5416 !important;
+}
+.orange-8 {
+  color: #fff !important;
+  background-color: #924813 !important;
+}
+.orange-9 {
+  color: #fff !important;
+  background-color: #7a3c10 !important;
+}
+
+.red-0 {
+  color: #000 !important;
+  background-color: #fbf3f2 !important;
+}
+.red-1 {
+  color: #000 !important;
+  background-color: #f3d6d4 !important;
+}
+.red-2 {
+  color: #000 !important;
+  background-color: #e7ada9 !important;
+}
+.red-3 {
+  color: #fff !important;
+  background-color: #db847d !important;
+}
+.red-4 {
+  color: #fff !important;
+  background-color: #d05a52 !important;
+}
+.red-5 {
+  color: #fff !important;
+  background-color: #a6352d !important;
+}
+.red-6 {
+  color: #fff !important;
+  background-color: #932f28 !important;
+}
+.red-7 {
+  color: #fff !important;
+  background-color: #812a23 !important;
+}
+.red-8 {
+  color: #fff !important;
+  background-color: #6e241e !important;
+}
+.red-9 {
+  color: #fff !important;
+  background-color: #5c1e19 !important;
+}
+
+.purple-0 {
+  color: #000 !important;
+  background-color: #fbf6f9 !important;
+}
+.purple-1 {
+  color: #000 !important;
+  background-color: #f1e1ed !important;
+}
+.purple-2 {
+  color: #000 !important;
+  background-color: #e2c4da !important;
+}
+.purple-3 {
+  color: #000 !important;
+  background-color: #d4a6c8 !important;
+}
+.purple-4 {
+  color: #fff !important;
+  background-color: #c689b6 !important;
+}
+.purple-5 {
+  color: #fff !important;
+  background-color: #ae5797 !important;
+}
+.purple-6 {
+  color: #fff !important;
+  background-color: #9d4c87 !important;
+}
+.purple-7 {
+  color: #fff !important;
+  background-color: #894276 !important;
+}
+.purple-8 {
+  color: #fff !important;
+  background-color: #763965 !important;
+}
+.purple-9 {
+  color: #fff !important;
+  background-color: #622f55 !important;
+}
+
+.yellow-0 {
+  color: #000 !important;
+  background-color: #fefcf5 !important;
+}
+.yellow-1 {
+  color: #000 !important;
+  background-color: #fdf6dd !important;
+}
+.yellow-2 {
+  color: #000 !important;
+  background-color: #fbecbb !important;
+}
+.yellow-3 {
+  color: #000 !important;
+  background-color: #fae399 !important;
+}
+.yellow-4 {
+  color: #000 !important;
+  background-color: #f8da77 !important;
+}
+.yellow-5 {
+  color: #000 !important;
+  background-color: #f4c836 !important;
+}
+.yellow-6 {
+  color: #000 !important;
+  background-color: #f3bf16 !important;
+}
+.yellow-7 {
+  color: #000 !important;
+  background-color: #dcac0c !important;
+}
+.yellow-8 {
+  color: #fff !important;
+  background-color: #bd930a !important;
+}
+.yellow-9 {
+  color: #fff !important;
+  background-color: #9d7b08 !important;
+}
+
+.brown-0 {
+  color: #000 !important;
+  background-color: #fbf8f6 !important;
+}
+.brown-1 {
+  color: #000 !important;
+  background-color: #f3e9e0 !important;
+}
+.brown-2 {
+  color: #000 !important;
+  background-color: #e7d2c1 !important;
+}
+.brown-3 {
+  color: #000 !important;
+  background-color: #dcbca2 !important;
+}
+.brown-4 {
+  color: #000 !important;
+  background-color: #d0a583 !important;
+}
+.brown-5 {
+  color: #fff !important;
+  background-color: #bc804e !important;
+}
+.brown-6 {
+  color: #fff !important;
+  background-color: #ac7141 !important;
+}
+.brown-7 {
+  color: #fff !important;
+  background-color: #966339 !important;
+}
+.brown-8 {
+  color: #fff !important;
+  background-color: #815531 !important;
+}
+.brown-9 {
+  color: #fff !important;
+  background-color: #6b4729 !important;
+}
