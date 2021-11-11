@@ -39,7 +39,7 @@ const seed = async () => {
       firstName: "Zachary",
       lastName: "Lankton",
       username: "zachlankton",
-      phone: "667-4516",
+      phone: "321-4567",
       email: "zach@mmpmg.com",
     });
     await newUser.save();
