@@ -3,7 +3,7 @@ import { beforeAll, afterAll, expect } from "@jest/globals";
 import db from "@/db/index";
 import { start, close } from "ottoman";
 import Models from "@/models/index";
-const { User } = Models;
+const { UserProfile } = Models;
 
 beforeAll(async () => {
   await db.connect();
@@ -16,7 +16,7 @@ afterAll(async () => {
 
 describe("User Model Tests", () => {
   it("fails without userid set", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       //userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -34,7 +34,7 @@ describe("User Model Tests", () => {
   });
 
   it("fails with userid set to empty string", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       userid: "",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -52,7 +52,7 @@ describe("User Model Tests", () => {
   });
 
   it("fails without email set", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -70,7 +70,7 @@ describe("User Model Tests", () => {
   });
 
   it("invalid email fails", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -88,7 +88,7 @@ describe("User Model Tests", () => {
   });
 
   it("invalid phone fails", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -106,7 +106,7 @@ describe("User Model Tests", () => {
   });
 
   it("phone number can be blank", async () => {
-    const newUser = new User({
+    const newUser = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -124,7 +124,7 @@ describe("User Model Tests", () => {
   });
 
   it("can save new user (needs database)", async () => {
-    const newUser: any = new User({
+    const newUser: any = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Plankton",
@@ -143,7 +143,7 @@ describe("User Model Tests", () => {
   });
 
   it("can create a second user in the db", async () => {
-    const newUser: any = new User({
+    const newUser: any = new UserProfile({
       userid: "test2",
       firstName: "Shalary",
       lastName: "Menoduno",
@@ -165,7 +165,7 @@ describe("User Model Tests", () => {
     expect.assertions(1);
     let user: any = {};
     try {
-      user = await User.findById("test");
+      user = await UserProfile.findById("test");
     } catch (e: any) {
       // console.log(e.message);
     }
@@ -176,7 +176,7 @@ describe("User Model Tests", () => {
     expect.assertions(1);
     let users: any = {};
     try {
-      users = await User.find();
+      users = await UserProfile.find();
     } catch (e: any) {
       // console.log(e.message);
     }
@@ -188,7 +188,7 @@ describe("User Model Tests", () => {
     expect.assertions(1);
     let users: any = {};
     try {
-      users = await User.removeMany();
+      users = await UserProfile.removeMany();
     } catch (e: any) {
       // console.log(e.message);
     }

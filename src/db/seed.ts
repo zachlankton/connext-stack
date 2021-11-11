@@ -2,7 +2,7 @@ require("dotenv").config({ path: `.env.local` });
 import db from "./index";
 import { start } from "ottoman";
 import Models from "../models/index";
-const { User } = Models;
+const { UserProfile } = Models;
 import { exit } from "process";
 import readline from "readline";
 
@@ -33,8 +33,8 @@ const seed = async () => {
   try {
     await db.connect();
     await start();
-    await User.removeMany();
-    const newUser = new User({
+    await UserProfile.removeMany();
+    const newUser = new UserProfile({
       userid: "test",
       firstName: "Zachary",
       lastName: "Lankton",

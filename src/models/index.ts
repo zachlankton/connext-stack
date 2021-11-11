@@ -1,7 +1,7 @@
-import User from "@/models/User";
+import UserProfile from "@/models/UserProfile";
 
 const Models = {
-  User,
+  UserProfile,
 };
 
 export default Models;
