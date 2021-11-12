@@ -26,7 +26,7 @@
     "react-redux": "^7.2.6"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "github:cypress-io/code-coverage",
+    "@cypress/code-coverage": "github:cypress-io/code-coverage#bd146ee032155982b58a4a46c27882773ded9919",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@types/node": "16.11.6",
