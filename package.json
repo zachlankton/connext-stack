@@ -9,10 +9,10 @@
     "pretty": "prettier --write .",
     "pretty-check": "prettier --check .",
     "seed": "ts-node src/db/seed.ts",
-    "cypress": "cypress open",
-    "test:jest": "jest --collectCoverage",
-    "test:cypress": "cypress run",
-    "merge:coverage": "node mergeCoverage.js",
+    "cypress": "cypress open --config-file ./testing/cypress.json",
+    "test:cypress": "cypress run --config-file ./testing/cypress.json",
+    "test:jest": "jest --collectCoverage --config ./testing/jest.config.js",
+    "merge:coverage": "node ./testing/mergeCoverage.js",
     "test:all": "npm run lint && npm run pretty-check && npm run test:jest && npm run test:cypress && npm run merge:coverage"
   },
   "dependencies": {

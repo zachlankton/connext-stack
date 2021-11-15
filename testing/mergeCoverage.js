@@ -5,7 +5,7 @@
 const { execSync } = require("child_process");
 const fs = require("fs-extra");
 const REPORTS_FOLDER = "reports";
-const FINAL_OUTPUT_FOLDER = "coverage";
+const FINAL_OUTPUT_FOLDER = "docs/coverage";
 const run = (commands) => {
   commands.forEach((command) => execSync(command, { stdio: "inherit" }));
 };

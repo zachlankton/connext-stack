@@ -12,6 +12,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 const { GoogleSocialLogin } = require("cypress-social-logins").plugins;
+require("dotenv").config({ path: "./.env.local" });
 
 /**
  * @type {Cypress.PluginConfig}
@@ -20,6 +21,7 @@ const { GoogleSocialLogin } = require("cypress-social-logins").plugins;
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  config.env = { ...process.env, ...config.env };
   require("@cypress/code-coverage/task")(on, config);
   on("task", {
     GoogleSocialLogin: GoogleSocialLogin,

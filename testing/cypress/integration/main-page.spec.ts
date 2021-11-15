@@ -12,10 +12,10 @@ describe("Page Tests", () => {
   });
 
   it("Next Auth Sign In", () => {
-    const username = Cypress.env("GOOGLE_USER");
-    const password = Cypress.env("GOOGLE_PW");
-    const loginUrl = Cypress.env("SITE_NAME");
-    const cookieName = Cypress.env("COOKIE_NAME");
+    const username = Cypress.env("CYPRESS_GOOGLE_USER");
+    const password = Cypress.env("CYPRESS_GOOGLE_PW");
+    const loginUrl = Cypress.env("CYPRESS_SITE_NAME");
+    const cookieName = Cypress.env("CYPRESS_COOKIE_NAME");
     const socialLoginOptions = {
       username,
       password,

@@ -1,0 +1,16 @@
+{
+  "env": {
+    "codeCoverage": {
+      "url": "http://localhost:3000/api/__coverage__"
+    }
+  },
+  "video": false,
+  "chromeWebSecurity": false,
+  "envFile": "testing/cypress.env.json",
+  "fixturesFolder": "testing/cypress/fixtures",
+  "integrationFolder": "testing/cypress/integration",
+  "pluginsFile": "testing/cypress/plugins/index.js",
+  "screenshotsFolder": "testing/cypress/screenshots",
+  "supportFile": "testing/cypress/support/index.js",
+  "videosFolder": "testing/cypress/videos"
+}
