@@ -1,9 +1,7 @@
 import NextAuth, { Profile } from "next-auth";
 import { OAuthConfig } from "next-auth/providers";
 import Google from "next-auth/providers/google";
-import CouchbaseAdapter, {
-  adapterOptions,
-} from "../../../../next-auth-couch-adapter";
+import CouchbaseAdapter, { adapterOptions } from "next-auth-couchbase-adapter";
 
 const options: adapterOptions = {
   connectionString: "couchbase://localhost",
