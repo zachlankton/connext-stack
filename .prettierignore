@@ -10,3 +10,4 @@ reports
 .nyc_output
 node_modules
 build
+package-lock.json

@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/store/slices/userSessionSlice.ts</title>
+    <title>Code coverage report for pages/_app.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../prettify.css" />
-    <link rel="stylesheet" href="../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../sort-arrow-sprite.png);
+            background-image: url(../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/store/slices</a> userSessionSlice.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">pages</a> _app.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
-                <span class="quiet">Functions</span>
                 <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -102,11 +102,7 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,82 +124,74 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "src/store/index";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Head from "next/head";
+import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
+import { Provider as ReduxProvider } from "react-redux";
+import { store } from "src/store/index";
+import type { NextPage } from "next";
+import type { ReactElement, ReactNode } from "react";
+import Layout from "@/components/Layout";
 &nbsp;
-interface UserProfile {
-  firstName?: string;
-  lastName?: string;
-  username?: string;
-  name?: string | null | undefined;
-  email?: string | null | undefined;
-  roles?: Array&lt;string&gt;;
-  id?: string;
-  image?: string | null | undefined;
-}
-&nbsp;
-// Define a type for the slice state
-interface UserSessionState {
-  expires: string;
-  user?: UserProfile | undefined;
-}
-&nbsp;
-export type { UserSessionState };
-&nbsp;
-// Define the initial state using that type
-const initialState: UserSessionState = {
-  expires: "",
-  user: {
-    name: "",
-    email: "",
-    image: "",
-  },
+type NextPageWithLayout = NextPage &amp; {
+  // eslint-disable-next-line no-unused-vars
+  getLayout?: (page: ReactElement) =&gt; ReactNode;
 };
 &nbsp;
-export const userSlice = createSlice({
-  name: "userSession",
-  // `createSlice` will infer the state type from the `initialState` argument
-  initialState,
-  reducers: {
-    setUserLoggedIn: (state, action: PayloadAction&lt;UserSessionState&gt;) =&gt;
-      action.payload,
-    setUserLoggedOut: () =&gt; initialState,
-  },
-});
+type AppPropsWithLayout = AppProps &amp; {
+  Component: NextPageWithLayout;
+};
 &nbsp;
-export const { setUserLoggedIn, setUserLoggedOut } = userSlice.actions;
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) =&gt; page);
+  return getLayout(
+    &lt;&gt;
+      &lt;Head&gt;
+        &lt;title&gt;Connext Stack!&lt;/title&gt;
+        &lt;meta name="description" content="A Connext Stack Boilerplate" /&gt;
+        &lt;link rel="icon" href="/favicon.ico" /&gt;
+        &lt;link rel="stylesheet" href="/styles.css" /&gt;
+        &lt;link rel="stylesheet" href="/colors.css" /&gt;
+      &lt;/Head&gt;
 &nbsp;
-// Other code such as selectors can use the imported `RootState` type
-export const getUser = (state: RootState) =&gt; state.userSession.user;
+      &lt;ReduxProvider store={store}&gt;
+        &lt;SessionProvider session={session}&gt;
+          &lt;Layout&gt;
+            &lt;Component {...pageProps} /&gt;
+          &lt;/Layout&gt;
+        &lt;/SessionProvider&gt;
+      &lt;/ReduxProvider&gt;
+    &lt;/&gt;
+  );
+}
 &nbsp;
-export default userSlice.reducer;
+export default MyApp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -211,17 +199,17 @@ export default userSlice.reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Nov 15 2021 15:27:01 GMT-0500 (Eastern Standard Time)
+                at Tue Nov 16 2021 18:14:37 GMT-0500 (Eastern Standard Time)
             </div>
         </div>
-        <script src="../../../prettify.js"></script>
+        <script src="../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../sorter.js"></script>
-        <script src="../../../block-navigation.js"></script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
     </body>
 </html>
     
