@@ -1,5 +1,21 @@
 {
-  "name": "mmp-manage",
+  "name": "connext-stack",
+  "version": "0.0.1",
+  "description": "A stack comprised of Couchbase, Ottoman, Node.js and Next.js (and lots of other goodies!)",
+  "homepage": "https://zachlankton.github.io/connext-stack",
+  "repository": "https://github.com/zachlankton/connext-stack",
+  "bugs": {
+    "url": "https://github.com/zachlankton/connext-stack/issues"
+  },
+  "author": "zachlankton <zachlankton@gmail.com> (https://github.com/zachlankton)",
+  "license": "MIT",
+  "keywords": [
+    "next-auth",
+    "next.js",
+    "oauth",
+    "couchbase",
+    "ottoman"
+  ],
   "private": true,
   "scripts": {
     "dev": "nyc --silent next dev",
