@@ -10,6 +10,7 @@
 /coverage
 /coverage_cypress
 /coverage_jest
+/docs/coverage
 /.nyc_output
 
 # next.js
