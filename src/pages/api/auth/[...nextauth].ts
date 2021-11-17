@@ -8,13 +8,9 @@ const options: adapterOptions = {
   bucketName: "connext",
   username: "Administrator",
   password: "1234567890",
+  // ensure collectionS and indexes for quick setup in development (DON'T DO THIS IN PRODUCTION)
   ensureCollections: true,
   ensureIndexes: true,
-  collectionNames: {
-    User: "TestUser",
-    Account: "TestAccount",
-    Session: "TestSession",
-  },
 };
 
 export default NextAuth({
