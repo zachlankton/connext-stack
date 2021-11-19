@@ -1,4 +1,9 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import {
+  useSession,
+  signIn,
+  signOut,
+  RedirectableProvider,
+} from "next-auth/react";
 import { useAppDispatch } from "src/store/hooks";
 import {
   setUserLoggedIn,
@@ -12,7 +17,7 @@ import { BiLogOut, BiLogIn } from "react-icons/bi";
 
 export default function User() {
   const dispatch = useAppDispatch();
-  const { data: session } = useSession();
+  const { data: session } = useSession({ required: false });
 
   const SignOutComp = ({ session }: { session: Session }) => (
     <>
@@ -43,7 +48,7 @@ export default function User() {
       <BiLogIn
         className="sign-in"
         style={{ width: 50, height: 50 }}
-        onClick={() => signIn("google")}
+        onClick={() => signIn("google" as RedirectableProvider)}
       />
     </div>
   );

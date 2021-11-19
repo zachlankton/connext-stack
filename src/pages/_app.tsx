@@ -5,7 +5,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { store } from "src/store/index";
 import type { NextPage } from "next";
 import type { ReactElement, ReactNode } from "react";
-import Layout from "@/components/Layout";
+import Layout from "@/components/layout/Layout";
 
 type NextPageWithLayout = NextPage & {
   // eslint-disable-next-line no-unused-vars
