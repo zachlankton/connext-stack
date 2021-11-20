@@ -38,7 +38,7 @@ const seed = async () => {
         This will create dummy data, are you sure?? (TYPE: 'YES' to continue): `);
   if (ans.toLowerCase() != "yes") {
     console.log("Safe Choice! BYE!");
-    exit();
+    exit(0);
     }
   }
 
@@ -123,8 +123,8 @@ const seed = async () => {
   } catch (e) {
     console.error(e);
   }
-
-  exit();
+  
+  exit(0);
 };
 
 function wait(n: number) {
