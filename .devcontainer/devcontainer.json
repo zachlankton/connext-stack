@@ -1,0 +1,21 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/javascript-node-postgres
+// Update the VARIANT arg in docker-compose.yml to pick a Node.js version
+{
+  "name": "Connext Stack",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": ["dbaeumer.vscode-eslint"],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000, 8091],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh"
+
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  // "remoteUser": "node"
+}

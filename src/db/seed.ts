@@ -51,6 +51,14 @@ const seed = async () => {
       }
     );
     try {
+      console.log("Attempting to drop travel-sample if it exists");
+      await cnx.buckets().dropBucket("travel-sample" as string);
+    } catch (e) {
+      console.log(
+        "No travel-sample to Drop... continuing to create new bucket..."
+      );
+    }
+    try {
       console.log("Attempting to drop bucket if it exists");
       await cnx.buckets().dropBucket(process.env.COUCHBASE_BUCKET as string);
     } catch (e) {
@@ -63,7 +71,7 @@ const seed = async () => {
       ejectionMethod: EvictionPolicy.ValueOnly,
       name: process.env.COUCHBASE_BUCKET as string,
       flushEnabled: false,
-      ramQuotaMB: 16000,
+      ramQuotaMB: 500,
       numReplicas: 1,
       replicaIndexes: false,
       bucketType: BucketType.Couchbase,
