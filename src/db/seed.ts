@@ -32,12 +32,14 @@ function askQuestion(query: string): Promise<string> {
 }
 
 const seed = async () => {
+  if (!process.argv.includes("--yes-destroy-all-my-data")) {
   const ans: string =
     await askQuestion(`Seeding the database will DESTROY EVERYTHING !!! DO NOT DO THIS TO A PRODUCTION DATABASE !!!
         This will create dummy data, are you sure?? (TYPE: 'YES' to continue): `);
   if (ans.toLowerCase() != "yes") {
     console.log("Safe Choice! BYE!");
     exit();
+    }
   }
 
   console.log("Starting DB Seed...");
