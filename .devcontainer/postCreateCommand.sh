@@ -19,5 +19,5 @@ npm install
 cp .env.example .env.local
 echo "SECRET=$(openssl rand -hex 32)" >> .env.local 
 npm run seed -- --yes-destroy-all-my-data
-echo DEV CONTAINER SETUP SUCCESSFULLY!
+
 exit 0
