@@ -1,4 +1,3 @@
-
 describe("Page Tests", () => {
   const username = Cypress.env("CYPRESS_GOOGLE_USER");
   const password = Cypress.env("CYPRESS_GOOGLE_PW");
@@ -18,7 +17,6 @@ describe("Page Tests", () => {
 
   if (username !== undefined) {
     it("Next Auth Sign In", () => {
-        
       const socialLoginOptions = {
         username,
         password,
@@ -52,7 +50,6 @@ describe("Page Tests", () => {
     });
 
     it("User Profile Navigation Test", () => {
-    
       cy.intercept("/api/auth/session").as("getSession");
       cy.visit("http://localhost:3000");
       cy.get(".signed-in-as").click();
@@ -62,7 +59,6 @@ describe("Page Tests", () => {
     });
 
     it("Signed In and Sign out", () => {
-    
       cy.intercept("/api/auth/session").as("getSession");
       cy.intercept("/api/auth/providers", (req) => {
         req.redirect("/");
