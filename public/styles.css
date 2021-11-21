@@ -190,6 +190,17 @@ main.main-content > *:last-child {
   cursor: pointer;
 }
 
+.card {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px -2px black;
+}
+
+.text-centered {
+  text-align: center;
+}
+
 @media screen and (max-width: 900px) {
   main.main-content.show-sidebar {
     margin-left: 0px;

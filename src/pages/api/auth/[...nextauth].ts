@@ -13,9 +13,14 @@ const options: adapterOptions = {
   ensureIndexes: true,
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (!process.env.GOOGLE_ID || !process.env.GOOGLE_SECRET) {
-    throw new Error("Need to setup google oauth and add id and secret to .env.local (https://next-auth.js.org/providers/google)")
+    throw new Error(
+      "Need to setup google oauth and add id and secret to .env.local (https://next-auth.js.org/providers/google)"
+    );
   }
 
   const nextAuthHandler = NextAuth({
@@ -27,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }) as OAuthConfig<Profile>,
     ],
     secret: process.env.SECRET as string,
-    
+
     adapter: CouchbaseAdapter(options),
     // callbacks: {
     //   async signIn({ user, account, profile, email, credentials }) {
@@ -46,5 +51,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // },
   });
 
-  await nextAuthHandler(req,res)
+  await nextAuthHandler(req, res);
 }
