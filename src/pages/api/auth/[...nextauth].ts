@@ -26,9 +26,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         clientSecret: process.env.GOOGLE_SECRET as string,
       }) as OAuthConfig<Profile>,
     ],
-    jwt: {
-      secret: process.env.SECRET as string,
-    },
+    secret: process.env.SECRET as string,
+    
     adapter: CouchbaseAdapter(options),
     // callbacks: {
     //   async signIn({ user, account, profile, email, credentials }) {
