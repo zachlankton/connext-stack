@@ -46,7 +46,7 @@ This repo comes with a VS Code devcontainer configuration that allows for quick 
 1. Open a new window in VS Code
 2. Press F1 to bring up the command pallette
 3. type in `clone repo in container` press enter
-4. type in you github repo and press enter
+4. type in your github repo and press enter
 5. Wait awhile and Profit!
 ---
 ### Steps Detailed
