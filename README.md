@@ -65,11 +65,18 @@ Enter the name of your repo that you created in the first step when you cloned t
 
 ![VS Code Starting in Container](https://code.visualstudio.com/assets/docs/remote/containers/dev-container-progress.png)
 
+If all went well you should see something like this:
+
+![connext-devcontainer-success](https://user-images.githubusercontent.com/2927894/142852771-fa1e5dbd-f118-4482-8d10-58501aada2f0.PNG)
+
+
+
+
 
 ---
 # Manual Installation
 
-You can then clone your template into you local machine and run:
+After cloning the template to your own repo you can then clone your repo into your local machine and run:
 ```
 npm install
 ```
