@@ -8,7 +8,7 @@ This is meant to be an opinionated quick start template with batteries included.
 - [Getting Started](#getting-started)
 - [Quick Start Devcontainer](#quick-start-devcontainer)
 - [Manual Installation](#manual-installation)
-- [Running Development Server](#running-development-server)
+- [Running Development Server](#running-the-development-server)
 - [Build and Deploy](#build-and-deploy)
 - [Environment Vars](#environment-vars)
 - [Full Feature List](#full-feature-list)
