@@ -78,9 +78,14 @@ docker run -d --name couchbase-sandbox -p 8091-8094:8091-8094 -p 11210:11210 cou
 After cloning the template to your own repo you can then clone your repo into your local machine and run:
 
 ```bash
+# For windows, running these commands (and all other npm run commands) from powershell works best
 npm install
 cp .env.example .env.local
 npm run seed
+
+# FOR WINDOWS USERS:  If accidentally ran these commands in WSL first...
+# You may have to delete node_modules and run the above commands again using powershell
+# Running npm install in powershell after already running it in WSL (or git bash) will result weird failures and behaviors.
 ```
 
 This should work mostly out of the box, but there may be other dependencies required depending on your machine and setup. My approach is to try something and then if it doesn't work there is usually some helpful output about which dependencies are missing, then from there attempt to install them. But here is a list of dependencies that may be required:
