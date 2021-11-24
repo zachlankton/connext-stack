@@ -56,14 +56,26 @@ const Home: NextPage = () => {
             <a href="https://www.youtube.com/watch?v=BwuLxPH8IDs">learn it!</a>{" "}
             It is totally worth it!)
           </li>
-          <li><a href="https://pages.github.com/">Github Pages</a> with <a href="https://jekyllrb.com/">Jekyll</a> (in `docs` folder)</li>
+          <li>
+            <a href="https://pages.github.com/">Github Pages</a> with{" "}
+            <a href="https://jekyllrb.com/">Jekyll</a> (in `docs` folder)
+          </li>
           <li>Ottoman ODM DB Config with Seed file (found in `src/db`)</li>
           <li>Ottoman ODM Starter Models (found in `src/models`)</li>
-          <li>Styling Examples:
+          <li>
+            Styling Examples:
             <ul>
-              <li>Global Styles (in `public/` folder, implemented in `src/pages/_app.tsx` using `Next/Head` Component )</li>
-              <li>CSS Modules (in `src/styles` used in `src/pages/index.tsx` )</li>
-              <li>No front end library is included, this is where opinion ends... use what you like!</li>
+              <li>
+                Global Styles (in `public/` folder, implemented in
+                `src/pages/_app.tsx` using `Next/Head` Component )
+              </li>
+              <li>
+                CSS Modules (in `src/styles` used in `src/pages/index.tsx` )
+              </li>
+              <li>
+                No front end library is included, this is where opinion ends...
+                use what you like!
+              </li>
             </ul>
           </li>
           <li>Github Code QL Analysis Workflow</li>
