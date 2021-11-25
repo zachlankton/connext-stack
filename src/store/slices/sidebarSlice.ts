@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Define the initial state using that type
 const initialState = {
-  showSidebar: "show-sidebar",
+  showSidebar: "",
 };
 
 export const sidebarSlice = createSlice({
