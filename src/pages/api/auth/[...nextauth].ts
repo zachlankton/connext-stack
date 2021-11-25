@@ -8,9 +8,6 @@ import { ottoman, connectionOptions } from "@/db/index";
 const options: adapterOptions = {
   instance: ottoman,
   ...connectionOptions,
-  // ensure collectionS and indexes for quick setup in development (DON'T DO THIS IN PRODUCTION)
-  ensureCollections: true,
-  ensureIndexes: true,
 };
 
 export default async function handler(
