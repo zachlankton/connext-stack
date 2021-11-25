@@ -16,7 +16,7 @@ export interface UserProfileIF {
   zipCode?: number;
 }
 
-const UserSchema = new Schema(
+const UserProfileSchema = new Schema(
   {
     userid: { type: String, required: true },
     firstName: String,
@@ -53,9 +53,11 @@ const UserSchema = new Schema(
   }
 );
 
+export { UserProfileSchema };
+
 const UserModel: ModelTypes<UserProfileIF, any> = model(
   "UserProfile",
-  UserSchema,
+  UserProfileSchema,
   {
     idKey: "userid",
   }
