@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import useWindowSize from "src/hooks/useWindowSize";
 import { toggleSidebar } from "@/store/slices/sidebarSlice";
-import { useLayoutEffect } from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
 export default function Sidebar() {
   const showSidebar = useAppSelector((state) => state.sidebar.showSidebar);
@@ -10,7 +10,7 @@ export default function Sidebar() {
   const dispatch = useAppDispatch();
   const { width } = useWindowSize();
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (window.innerWidth >= sideBarBreakWidth) {
       dispatch(toggleSidebar());
     }
