@@ -165,6 +165,7 @@ main.main-content {
   left: 0px;
   top: 60px;
   overflow-x: hidden;
+  padding: 20px;
 }
 
 main.main-content.show-sidebar {
