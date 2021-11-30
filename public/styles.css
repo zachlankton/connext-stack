@@ -229,3 +229,8 @@ main.main-content > *:last-child {
     margin: 0px;
   }
 }
+
+.sidebar li > svg {
+  margin-right: 10px;
+  width: 18px;
+}
