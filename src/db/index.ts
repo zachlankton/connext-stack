@@ -1,6 +1,4 @@
 import { getDefaultInstance, Ottoman, SearchConsistency } from "ottoman";
-// eslint-disable-next-line no-unused-vars
-import Models, { UserProfile } from "@/models/index";
 
 console.log("setting up db...");
 const ottoman =

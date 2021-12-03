@@ -6,5 +6,4 @@ const Models = {
   UserRoles,
 };
 
-export { UserProfile, UserRoles };
 export default Models;
