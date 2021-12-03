@@ -1,4 +1,5 @@
-import { Schema, model, ModelTypes } from "ottoman";
+import { Schema, model, ModelTypes, getDefaultInstance } from "ottoman";
+import { modelsType } from "../db";
 
 export interface UserProfileIF {
   firstName?: string;
@@ -54,13 +55,13 @@ const UserProfileSchema = new Schema(
 );
 
 export { UserProfileSchema };
+const ottoman = getDefaultInstance();
+const models = ottoman.models as modelsType;
 
-const UserModel: ModelTypes<UserProfileIF, any> = model(
-  "UserProfile",
-  UserProfileSchema,
-  {
+const UserModel: ModelTypes<UserProfileIF, any> =
+  models.UserProfile ||
+  model("UserProfile", UserProfileSchema, {
     idKey: "userid",
-  }
-);
+  });
 
 export default UserModel;

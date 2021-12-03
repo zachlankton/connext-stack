@@ -1,4 +1,6 @@
 import { getDefaultInstance, Ottoman, SearchConsistency } from "ottoman";
+// eslint-disable-next-line no-unused-vars
+import Models, { UserProfile } from "@/models/index";
 
 console.log("setting up db...");
 const ottoman =
@@ -7,7 +9,10 @@ const ottoman =
     consistency: SearchConsistency.LOCAL,
   });
 
-export { ottoman };
+export type modelsType = { [key: string]: any };
+const models: modelsType = ottoman.models;
+
+export { ottoman, models };
 
 const connectionOptions = {
   connectionString: process.env.COUCHBASE_CONNECTION as string,
