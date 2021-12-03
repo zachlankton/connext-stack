@@ -4,7 +4,7 @@ import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { toggleSidebar } from "@/store/slices/sidebarSlice";
 
-export default function Layout() {
+function SideBarBtn() {
   const dispatch = useAppDispatch();
   const showSidebar = useAppSelector((state) => state.sidebar.showSidebar);
   const menuButtonProps = {
@@ -14,13 +14,21 @@ export default function Layout() {
   };
 
   return (
+    <>
+      {showSidebar ? (
+        <AiOutlineMenuFold {...menuButtonProps} />
+      ) : (
+        <AiOutlineMenuUnfold {...menuButtonProps} />
+      )}
+    </>
+  );
+}
+
+export default function Header() {
+  return (
     <header className="blue-5">
       <section className="left">
-        {showSidebar ? (
-          <AiOutlineMenuFold {...menuButtonProps} />
-        ) : (
-          <AiOutlineMenuUnfold {...menuButtonProps} />
-        )}
+        <SideBarBtn />
       </section>
       <section className="mid">
         <Link href="/">
