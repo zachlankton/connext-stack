@@ -1,15 +1,9 @@
-import {
-  useSession,
-  signIn,
-  signOut,
-  RedirectableProvider,
-} from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { useAppDispatch } from "src/store/hooks";
 import {
   setUserLoggedIn,
   setUserLoggedOut,
 } from "src/store/slices/userSessionSlice";
-import { Session } from "next-auth";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +13,7 @@ export default function User() {
   const dispatch = useAppDispatch();
   const { data: session } = useSession({ required: false });
 
-  const SignOutComp = ({ session }: { session: Session }) => (
+  const SignOutComp = ({ session }: any) => (
     <>
       <div className="user-widget">
         <BiLogOut
@@ -48,7 +42,7 @@ export default function User() {
       <BiLogIn
         className="sign-in"
         style={{ width: 50, height: 50 }}
-        onClick={() => signIn("google" as RedirectableProvider)}
+        onClick={() => signIn("google")}
       />
     </div>
   );
