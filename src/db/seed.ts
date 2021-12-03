@@ -11,7 +11,7 @@ import {
   ConflictResolutionType,
 } from "couchbase";
 import Models from "../models/index";
-const { UserProfile } = Models;
+const { UserRoles } = Models;
 import CouchbaseAdapter from "next-auth-couchbase-adapter";
 
 import { exit } from "process";
@@ -49,6 +49,8 @@ const seed = async () => {
     console.log("Ensuring Indexes...");
     await otCnx.ensureIndexes();
     console.log("All Collections and Indexes are ready!");
+
+    await addAdmin();
   } catch (e) {
     console.error(e);
   }
@@ -127,6 +129,22 @@ async function setupNextAuthModels(otCnx: Ottoman) {
     } else {
       throw new Error(e);
     }
+  }
+}
+
+async function addAdmin() {
+  if (process.env.SUPER_ADMIN_EMAIL) {
+    console.log("Adding admin role to: ", process.env.SUPER_ADMIN_EMAIL);
+    const userRole = new UserRoles({
+      user: process.env.SUPER_ADMIN_EMAIL,
+      roles: ["ADMIN"],
+    });
+    await userRole.save();
+    console.log("Saved...");
+  } else {
+    console.warn(
+      "No SUPER_ADMIN_EMAIL set in .env.local, SKIPPING adding admin role"
+    );
   }
 }
 

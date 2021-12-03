@@ -1,12 +1,14 @@
 import { sideBarListIF } from "@/components/layout/SideBarList";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/react";
+import getUserSession from "src/utils/getUserSession";
 
 export default async function sidebar(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const myList: sideBarListIF = [
+  const user = await getUserSession(req);
+
+  const list: sideBarListIF = [
     {
       icon: "FaHome",
       link: "/",
@@ -24,7 +26,13 @@ export default async function sidebar(
     },
   ];
 
-  const user = await getSession({ req });
-  console.log("USER:", user);
-  res.status(200).json(myList);
+  if (user && user.hasRole("ADMIN")) {
+    list.push({
+      icon: "FaUsersCog",
+      link: "/admin",
+      text: "Admin",
+    });
+  }
+
+  res.status(200).json(list);
 }
