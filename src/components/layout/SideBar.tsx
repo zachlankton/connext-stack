@@ -1,32 +1,15 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 
 import useWindowSize from "src/hooks/useWindowSize";
-import { toggleSidebar } from "@/store/slices/sidebarSlice";
+import { toggleSidebar, setList } from "@/store/slices/sidebarSlice";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 
-import SideBarList, { sideBarListIF } from "./SideBarList";
-import { useMemo } from "react";
-
-const myList: sideBarListIF = [
-  {
-    icon: "FaHome",
-    link: "/",
-    text: "Home",
-  },
-  {
-    icon: "FaUserAlt",
-    link: "/user-profile",
-    text: "User Profile",
-  },
-  {
-    icon: "FaPalette",
-    link: "/docs/colors",
-    text: "Colors",
-  },
-];
+import SideBarList from "./SideBarList";
+import { useEffect, useMemo } from "react";
 
 export default function Sidebar() {
   const showSidebar = useAppSelector((state) => state.sidebar.showSidebar);
+  const sideBarList = useAppSelector((state) => state.sidebar.list);
   const sideBarBreakWidth = 900;
   const dispatch = useAppDispatch();
   const { width } = useWindowSize();
@@ -35,6 +18,14 @@ export default function Sidebar() {
     if (window.innerWidth >= sideBarBreakWidth) {
       dispatch(toggleSidebar());
     }
+  }, [dispatch]);
+
+  useEffect(() => {
+    async function getSideBar() {
+      const list = await (await fetch("/api/sidebar")).json();
+      dispatch(setList(list));
+    }
+    getSideBar();
   }, [dispatch]);
 
   function checkShouldClose() {
@@ -48,9 +39,9 @@ export default function Sidebar() {
     >
       {useMemo(
         () => (
-          <SideBarList list={myList} />
+          <SideBarList list={sideBarList} />
         ),
-        []
+        [sideBarList]
       )}
     </section>
   );

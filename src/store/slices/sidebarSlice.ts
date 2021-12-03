@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // Define the initial state using that type
 const initialState = {
   showSidebar: "",
+  list: [],
 };
 
 export const sidebarSlice = createSlice({
@@ -17,9 +18,12 @@ export const sidebarSlice = createSlice({
         state.showSidebar = "show-sidebar";
       }
     },
+    setList: (state, action) => {
+      state.list = action.payload;
+    },
   },
 });
 
-export const { toggleSidebar } = sidebarSlice.actions;
+export const { toggleSidebar, setList } = sidebarSlice.actions;
 
 export default sidebarSlice.reducer;
