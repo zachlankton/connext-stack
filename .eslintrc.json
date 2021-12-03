@@ -6,9 +6,7 @@
     "prettier",
     "plugin:import/recommended",
     "plugin:cypress/recommended",
-    "plugin:react-redux/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:react-redux/recommended"
   ],
   "rules": {
     "@next/next/no-css-tags": "off"
