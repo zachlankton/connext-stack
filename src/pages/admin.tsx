@@ -9,6 +9,8 @@ const Admin = ({ data }: { data: any }) => {
   );
 };
 
+export default Admin;
+
 export async function getServerSideProps(context: any) {
   const user = await getUserSession(context.req);
   const data: any = {};
@@ -22,5 +24,3 @@ export async function getServerSideProps(context: any) {
   // Pass data to the page via props
   return { props: { data } };
 }
-
-export default Admin;
