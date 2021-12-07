@@ -59,7 +59,7 @@ header > section {
   flex: 1;
 }
 
-section.mid {
+header > section.mid {
   flex: 2;
   text-align: center;
   overflow: hidden;
@@ -79,6 +79,7 @@ footer {
 
 footer > section {
   flex: 1;
+  text-align: center;
 }
 
 footer > section p {
@@ -117,7 +118,7 @@ header > section.right {
   max-width: 150px;
 }
 
-section.left {
+header > section.left {
   max-width: 150px;
 }
 
