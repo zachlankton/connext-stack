@@ -50,5 +50,8 @@ jobs:
       - name: Seed Database
         run: npm run seed -- --yes-destroy-all-my-data
 
+      - name: Start Development Server
+        run: npm start &
+
       - name: Test
         run: npm run test:all
