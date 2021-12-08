@@ -4,7 +4,7 @@ import CouchbaseAdapter, { adapterOptions } from "next-auth-couchbase-adapter";
 import { NextApiRequest, NextApiResponse } from "next";
 import { ottoman, connectionOptions } from "@/db/index";
 import Models from "@/models/index";
-const { UserRoles } = Models;
+const { UserRoles, UserProfile } = Models;
 
 const options: adapterOptions = {
   instance: ottoman,
@@ -33,14 +33,27 @@ export default async function handler(
 
     adapter: CouchbaseAdapter(options),
     callbacks: {
-      //   async signIn({ user, account, profile, email, credentials }) {
-      //     console.log("User: ", user);
-      //     console.log("Account ", account);
-      //     console.log("Profile: ", profile);
-      //     console.log("Email: ", email);
-      //     console.log("Creds: ", credentials);
-      //     return true;
-      //   },
+      async signIn({ user }) {
+        const userProfile = (await UserProfile.find({ userid: user.email }))
+          .rows[0];
+
+        if (!userProfile) {
+          const newUserProfile = new UserProfile({
+            userid: user.email as string,
+            image: user.image,
+            name: user.name,
+          });
+          const test = await newUserProfile.save(true);
+          console.log("TEST", newUserProfile, test);
+        }
+
+        const userRoles = (await UserRoles.find({ user: user.email })).rows[0]
+          ?.roles;
+
+        if (!userRoles) return false;
+
+        return true;
+      },
       async session({ session, user }: any) {
         const roles = (await UserRoles.find({ user: user.email })).rows[0]
           ?.roles;
