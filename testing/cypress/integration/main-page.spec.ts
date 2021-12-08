@@ -28,7 +28,9 @@ describe("Page Tests", () => {
         postLoginSelector: ".signed-in-as",
       };
 
-      cy.task("GoogleSocialLogin", socialLoginOptions).then(({ cookies }) => {
+      cy.task("GoogleSocialLogin", socialLoginOptions, {
+        timeout: 120000,
+      }).then(({ cookies }) => {
         cy.clearCookies();
         const cookie = cookies
           .filter((cookie) => cookie.name === cookieName)
