@@ -53,6 +53,8 @@ const UserProfileSchema = new Schema(
 );
 
 UserProfileSchema.pre("validate", function (doc) {
+  // Unfortunately this needs to be done to validate userid as an email
+  // the save validate hook built in to ottoman skips modleKey and ID_KEY
   UserProfileSchema.validate(doc);
 });
 

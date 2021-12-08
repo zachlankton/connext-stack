@@ -43,6 +43,7 @@ export default async function handler(
             image: user.image,
             name: user.name,
           });
+          // save(true) will fail if document exists <--- this is desired
           const test = await newUserProfile.save(true);
           console.log("TEST", newUserProfile, test);
         }
