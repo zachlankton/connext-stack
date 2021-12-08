@@ -7,7 +7,6 @@ export interface UserProfileIF {
   username?: string;
   name?: string | null | undefined;
   phone?: string;
-  email?: string | null | undefined;
   roles?: Array<string>;
   userid?: string;
   image?: string | null | undefined;
@@ -19,7 +18,15 @@ export interface UserProfileIF {
 
 const UserProfileSchema = new Schema(
   {
-    userid: { type: String, required: true },
+    userid: {
+      type: String,
+      required: true,
+      validator: {
+        regexp:
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        message: "Email Address is not valid!",
+      },
+    },
     firstName: String,
     lastName: String,
     username: String,
@@ -39,20 +46,15 @@ const UserProfileSchema = new Schema(
         return data;
       },
     },
-    email: {
-      type: String,
-      required: true,
-      validator: {
-        regexp:
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        message: "Email Address is not valid!",
-      },
-    },
   },
   {
     timestamps: true,
   }
 );
+
+UserProfileSchema.pre("validate", function (doc) {
+  UserProfileSchema.validate(doc);
+});
 
 export { UserProfileSchema };
 const models = ottoman.models as modelsType;

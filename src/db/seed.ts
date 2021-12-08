@@ -51,6 +51,7 @@ const seed = async () => {
     console.log("All Collections and Indexes are ready!");
 
     await addAdmin();
+    await addCypressTestUser();
   } catch (e) {
     console.error(e);
   }
@@ -144,6 +145,22 @@ async function addAdmin() {
   } else {
     console.warn(
       "No SUPER_ADMIN_EMAIL set in .env.local, SKIPPING adding admin role"
+    );
+  }
+}
+
+async function addCypressTestUser() {
+  if (process.env.CYPRESS_GOOGLE_USER) {
+    console.log("Adding user role to: ", process.env.CYPRESS_GOOGLE_USER);
+    const userRole = new UserRoles({
+      user: process.env.CYPRESS_GOOGLE_USER,
+      roles: ["USER"],
+    });
+    await userRole.save();
+    console.log("Saved...");
+  } else {
+    console.warn(
+      "No CYPRESS_GOOGLE_USER set in .env.local, SKIPPING adding user role"
     );
   }
 }
