@@ -1,0 +1,54 @@
+name: Testing
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [main]
+
+jobs:
+  build:
+    services:
+      couchbase:
+        image: couchbase/server-sandbox:7.0.0
+        ports:
+          - 8091-8094:8091-8094
+          - 11210:11210
+
+    runs-on: ${{ matrix.os }}
+    env:
+      NEXTAUTH_URL: http://localhost:3000
+
+      COUCHBASE_CONNECTION: couchbase://localhost
+      COUCHBASE_BUCKET: connext
+      COUCHBASE_USER: Administrator
+      COUCHBASE_PW: password
+
+      GOOGLE_ID: ${{ secrets.GOOGLE_ID }}
+      GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
+
+      CYPRESS_GOOGLE_USER: ${{ secrets.CYPRESS_GOOGLE_USER }}
+      CYPRESS_GOOGLE_PW: ${{ secrets.CYPRESS_GOOGLE_PW }}
+      CYPRESS_COOKIE_NAME: next-auth.session-token
+      CYPRESS_SITE_NAME: http://localhost:3000
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node_version: ["14"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Seed Database
+        run: npm run seed
+
+      - name: Test
+        run: npm run test:all
