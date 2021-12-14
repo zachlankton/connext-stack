@@ -9,7 +9,8 @@
     "plugin:react-redux/recommended"
   ],
   "rules": {
-    "@next/next/no-css-tags": "off"
+    "@next/next/no-css-tags": "off",
+    "@next/next/no-img-element": "off"
   },
   "settings": {
     "import/ignore": ["node_modules"]
