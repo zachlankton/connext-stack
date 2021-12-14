@@ -1,7 +1,5 @@
-import {
-  connextFormSubmit,
-  handleConnextFormSubmission,
-} from "src/utils/connextForm";
+import Link from "next/link";
+import { connextFormSubmit, getFormSubmission } from "src/utils/connextForm";
 import getUserSession from "src/utils/getUserSession";
 
 const Admin = (props: any) => {
@@ -15,6 +13,11 @@ const Admin = (props: any) => {
   return (
     <>
       <h1>Admin</h1>
+      <Link href="/admin/userlist">
+        <a>
+          <button>User List</button>
+        </a>
+      </Link>
       {data.noPermission ? <h4>No Permission</h4> : <h4>{data?.test}</h4>}
 
       <form method="post" onSubmit={handleSubmit}>
@@ -33,9 +36,8 @@ export async function getServerSideProps(context: any) {
   const data: any = {};
   data.test = "User has admin role!";
 
-  await handleConnextFormSubmission(context.req, (data: any) => {
-    console.log(data);
-  });
+  const formData = await getFormSubmission(context.req);
+  console.log(formData);
 
   return { props: { data } };
 }
