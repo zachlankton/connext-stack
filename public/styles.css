@@ -101,6 +101,7 @@ body {
 
 .user-widget img {
   border-radius: 50%;
+  width: 48px;
 }
 
 svg.sign-out {

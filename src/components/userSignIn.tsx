@@ -5,7 +5,7 @@ import {
   setUserLoggedOut,
 } from "src/store/slices/userSessionSlice";
 import { useEffect } from "react";
-import Image from "next/image";
+import Image from "@/components/utils/CachedImg";
 import Link from "next/link";
 import { BiLogOut, BiLogIn } from "react-icons/bi";
 
@@ -28,8 +28,6 @@ export default function User() {
               className="signed-in-as"
               src={session.user?.image as string}
               alt={`User Profile Pic for ${session.user?.email}`}
-              width="50px"
-              height="50px"
             />
           </a>
         </Link>
