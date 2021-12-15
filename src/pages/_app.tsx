@@ -6,9 +6,7 @@ import { store } from "src/store/index";
 import type { NextPage } from "next";
 import { ReactElement, ReactNode, useEffect, useState } from "react";
 import Layout from "@/components/layout/Layout";
-import DotLoader from "react-spinners/DotLoader";
 import { useRouter } from "next/router";
-import { css } from "@emotion/react";
 
 type NextPageWithLayout = NextPage & {
   // eslint-disable-next-line no-unused-vars
@@ -20,12 +18,6 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function LoadingSpinner() {
-  const override = css`
-    display: block;
-    margin: 0 auto;
-    border-color: red;
-  `;
-
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const handleRouteChange = () => setIsLoading(true);
@@ -47,8 +39,13 @@ function LoadingSpinner() {
     <>
       {isLoading && (
         <div className="global-overlay">
-          <DotLoader loading={isLoading} css={override} size={150} />
-          <h3 style={{ textAlign: "center" }}>Loading ... </h3>
+          <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <h3 style={{ textAlign: "center", color: "white" }}>Loading ... </h3>
         </div>
       )}
     </>

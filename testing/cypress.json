@@ -12,5 +12,9 @@
   "pluginsFile": "testing/cypress/plugins/index.js",
   "screenshotsFolder": "testing/cypress/screenshots",
   "supportFile": "testing/cypress/support/index.js",
-  "videosFolder": "testing/cypress/videos"
+  "videosFolder": "testing/cypress/videos",
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
 }
