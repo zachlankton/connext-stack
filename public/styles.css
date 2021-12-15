@@ -239,3 +239,14 @@ main.main-content > *:last-child {
   margin-right: 10px;
   width: 18px;
 }
+
+.global-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 9999999;
+  background-color: #808080c9;
+  padding-top: 40vh;
+}
