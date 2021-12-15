@@ -240,6 +240,28 @@ main.main-content > *:last-child {
   width: 18px;
 }
 
+form input,
+form select {
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+form {
+  flex: 1;
+  padding: 10px;
+}
+
+form label {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
 .global-overlay {
   position: fixed;
   top: 0px;
