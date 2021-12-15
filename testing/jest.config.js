@@ -4,15 +4,17 @@ module.exports = {
     "!**/*.d.ts",
     "!**/node_modules/**",
     "!**/.next/**",
-    "!**/cypress/**",
+    "!**/testing/**",
     "!**/coverage/**",
     "!jest.config.js",
     "!next.config.js",
     "!**/mergeCoverage.js",
     "!**/__coverage__.js",
     "!**/seed.ts",
+    "!**/check_google.ts",
   ],
-  coverageDirectory: "../coverage_jest",
+  collectCoverage: true,
+  coverageDirectory: "./coverage_jest",
   coverageReporters: ["json"],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
@@ -27,15 +29,15 @@ module.exports = {
     "^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$":
       "<rootDir>/__mocks__/fileMock.js",
 
-    "^@/components/(.*)$": "<rootDir>/../src/components/$1",
-    "^@/db/(.*)$": "<rootDir>/../src/db/$1",
-    "^@/models/(.*)$": "<rootDir>/../src/models/$1",
-    "^@/store/(.*)$": "<rootDir>/../src/store/$1",
+    "^@/components/(.*)$": "<rootDir>/src/components/$1",
+    "^@/db/(.*)$": "<rootDir>/src/db/$1",
+    "^@/models/(.*)$": "<rootDir>/src/models/$1",
+    "^@/store/(.*)$": "<rootDir>/src/store/$1",
   },
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/.next/",
-    "<rootDir>/cypress/",
+    "<rootDir>/testing/cypress/",
   ],
   testEnvironment: "jsdom",
   transform: {
@@ -47,5 +49,6 @@ module.exports = {
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  rootDir: "../",
+  setupFilesAfterEnv: ["<rootDir>/testing/jest.setup.js"],
 };

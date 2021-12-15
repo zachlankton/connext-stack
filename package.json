@@ -27,7 +27,7 @@
     "seed": "ts-node src/db/seed.ts",
     "cypress": "cypress open --config-file ./testing/cypress.json",
     "test:cypress": "cypress run --config-file ./testing/cypress.json",
-    "test:jest": "jest --collectCoverage --config ./testing/jest.config.js",
+    "test:jest": "jest --coverage --no-cache --config ./testing/jest.config.js",
     "merge:coverage": "node ./testing/mergeCoverage.js",
     "test:all": "npm run lint && npm run pretty-check && npm run test:jest && npm run test:cypress && npm run merge:coverage",
     "prepare": "husky install"
