@@ -11,11 +11,11 @@ type imgType = {
 
 const Img = (props: imgType) => {
   const imgRef = useRef<HTMLImageElement>(null);
-  const win: any = window;
-  win._imageCache = win._imageCache || {};
-  const cachedImage = win._imageCache[props.src];
 
   useEffect(() => {
+    const win: any = window;
+    win._imageCache = win._imageCache || {};
+    const cachedImage = win._imageCache[props.src];
     if (cachedImage) return (imgRef.current!.src = cachedImage);
 
     urlContentToDataUri(props.src).then((dataUri) => {
@@ -23,7 +23,7 @@ const Img = (props: imgType) => {
       win._imageCache[props.src] = dataUri as string;
       imgRef.current.src = dataUri as string;
     });
-  }, [cachedImage, imgRef, props.src, win._imageCache]);
+  }, [imgRef, props.src]);
 
   return (
     <img
