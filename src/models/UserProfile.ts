@@ -39,10 +39,11 @@ const UserProfileSchema = new Schema(
       type: String,
       required: false,
       validator: (data: any) => {
-        if (data === "undefined") return data;
+        if (data === "undefined" || data === "") return data;
         const regexp =
           /^\s*(?:\+?(\d{1,3}))?([-. (]*(\d{3})[-. )]*)?((\d{3})[-. ]*(\d{2,4})(?:[-.x ]*(\d+))?)\s*$/gm;
-        if (!regexp.test(data)) throw new Error("Phone Number is Invalid!");
+        if (!regexp.test(data))
+          throw new Error("Phone Number is Invalid! -> '" + data + "'");
         return data;
       },
     },

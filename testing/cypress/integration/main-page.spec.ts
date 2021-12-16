@@ -82,7 +82,22 @@ describe("Page Tests", () => {
       cy.intercept("/api/auth/session").as("getSession");
       cy.visit("http://localhost:3000");
       cy.get(".signed-in-as").click();
-      cy.get(".user-profile-title").should("have.text", "User Profile");
+
+      cy.contains("User Profile Form");
+      cy.get('[name="user.firstName"]').clear().type("User Test First Name");
+      cy.get('[name="user.lastName"]').clear().type("User Test Last Name");
+      cy.get('[name="user.username"]').clear().type("User TestUserName");
+      cy.get('[name="user.phone"]').clear().type("1234567890");
+      cy.get('[name="user.street"]').clear().type("User 123 Oak Street");
+      cy.get('[name="user.city"]').clear().type("User SomeCity");
+      cy.get('[name="user.state"]').clear().type("User SomeState");
+      cy.get('[name="user.zipCode"]').clear().type("65432");
+
+      cy.get("form").contains("Save").click();
+      cy.contains("Saved !!!")
+        .invoke("attr", "class")
+        .should("include", "show");
+
       cy.get("header>section.mid").click();
       cy.url().should("include", "/");
     });
@@ -118,6 +133,28 @@ describe("Page Tests", () => {
     it("View/Edit User Details", () => {
       cy.get(".ag-body-viewport").contains(username).click();
       cy.contains("User Profile Form");
+
+      cy.get('[name="user.firstName"]').should(
+        "have.value",
+        "User Test First Name"
+      );
+      cy.get('[name="user.lastName"]').should(
+        "have.value",
+        "User Test Last Name"
+      );
+      cy.get('[name="user.username"]').should(
+        "have.value",
+        "User TestUserName"
+      );
+      cy.get('[name="user.phone"]').should("have.value", "1234567890");
+      cy.get('[name="user.street"]').should(
+        "have.value",
+        "User 123 Oak Street"
+      );
+      cy.get('[name="user.city"]').should("have.value", "User SomeCity");
+      cy.get('[name="user.state"]').should("have.value", "User SomeState");
+      cy.get('[name="user.zipCode"]').should("have.value", "65432");
+
       cy.get('[name="user.firstName"]').type("Test First Name");
       cy.get('[name="user.lastName"]').type("Test Last Name");
       cy.get('[name="user.username"]').type("TestUserName");
@@ -130,6 +167,15 @@ describe("Page Tests", () => {
       cy.wait(1000);
       cy.get('[name="roles.roles[2]"]').select("Sales");
       cy.get("form").contains("Save").click();
+      cy.contains("Saved !!!")
+        .invoke("attr", "class")
+        .should("include", "show");
+      cy.intercept("/api/auth/session").as("getSession");
+      cy.reload();
+      cy.wait("@getSession");
+      cy.get(".ag-body-viewport").contains(username).click();
+      cy.contains("User Profile Form");
+      cy.get('[name="roles.roles[2]"]').should("have.value", "Sales");
     });
 
     it("Remove ALL Roles thru test API", () => {

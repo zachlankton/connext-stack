@@ -13,6 +13,8 @@ export default function UserProfileForm(props: any) {
     toast("error");
   };
 
+  if (!user) return <h1>No User</h1>;
+
   return (
     <>
       <Toast />
@@ -81,7 +83,8 @@ async function handleForm(formData: any) {
 
     return { props: { ...data, success: true } };
   } catch (e: any) {
-    throw new Error(e.message);
+    console.error(e);
+    return { props: { err: e.message } };
   }
 }
 
