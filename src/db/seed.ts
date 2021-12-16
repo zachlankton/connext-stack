@@ -63,10 +63,14 @@ async function confirm() {
   if (!process.argv.includes("--yes-destroy-all-my-data")) {
     const ans: string =
       await askQuestion(`Seeding the database will DESTROY EVERYTHING !!! DO NOT DO THIS TO A PRODUCTION DATABASE !!!
-        This will create dummy data, are you sure?? (TYPE: 'YES' to continue): `);
+
+        If you are running all tests with 'npm run test:all' ---->
+        NOW is a good time to start the dev server in another terminal run 'npm run dev'
+        
+        (TYPE: 'YES' to continue): `);
     if (ans.toLowerCase() != "yes") {
       console.log("Safe Choice! BYE!");
-      exit(0);
+      exit(1);
     }
   }
   await wait(10);

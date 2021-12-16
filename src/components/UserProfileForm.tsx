@@ -64,6 +64,20 @@ export default function UserProfileForm(props: any) {
             </select>
           ))}
 
+          {/* These inputs are here just for testing purposes */}
+          <div style={{ display: "none" }}>
+            <input type="hidden" defaultValue={user.userid} name="test1" />
+            <input type="hidden" defaultValue={rolesList.id} name="test2" />
+            {rolesList.roles.map((role: any, idx: number) => (
+              <input
+                key={idx}
+                type="hidden"
+                defaultValue={role}
+                name={`test3.roles[${idx}].role`}
+              />
+            ))}
+          </div>
+
           <button onClick={addRole}>Add</button>
           <button type="submit">Save</button>
         </form>

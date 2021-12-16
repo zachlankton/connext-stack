@@ -16,8 +16,7 @@ const Img = (props: imgType) => {
   const cachedImage = win._imageCache[props.src];
 
   useEffect(() => {
-    if (imgRef.current === null) return null;
-    if (cachedImage) return (imgRef.current.src = cachedImage);
+    if (cachedImage) return (imgRef.current!.src = cachedImage);
 
     urlContentToDataUri(props.src).then((dataUri) => {
       if (imgRef.current === null) return null;
@@ -48,7 +47,6 @@ function urlContentToDataUri(
     `/_next/image?url=${encodeURIComponent(url)}&w=${width}&q=${quality}`
   )
     .then((response) => {
-      if (!response.ok) throw new Error("Could not fetch");
       return response.blob();
     })
     .then(
@@ -60,10 +58,7 @@ function urlContentToDataUri(
           };
           reader.readAsDataURL(blob);
         })
-    )
-    .catch((err) => {
-      console.log(err);
-    });
+    );
 }
 
 export default Img;

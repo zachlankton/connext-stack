@@ -8,7 +8,7 @@ function SideBarBtn() {
   const dispatch = useAppDispatch();
   const showSidebar = useAppSelector((state) => state.sidebar.showSidebar);
   const menuButtonProps = {
-    className: "icon",
+    className: "icon sidebar-btn",
     style: { width: 50, height: 50, margin: 5 },
     onClick: () => dispatch(toggleSidebar()),
   };

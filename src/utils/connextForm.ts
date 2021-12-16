@@ -56,7 +56,6 @@ function getFormData(form: any) {
     } else {
       data_object[name] = val;
     }
-    console.log("stop");
   });
   return return_data;
 }

@@ -25,11 +25,13 @@
     "pretty": "prettier --write .",
     "pretty-check": "prettier --check .",
     "seed": "ts-node src/db/seed.ts",
-    "cypress": "cypress open --config-file ./testing/cypress.json",
-    "test:cypress": "cypress run --config-file ./testing/cypress.json",
+    "cypress": "npm run test:addAdminRoleAPI && cypress open --config-file ./testing/cypress.json && npm run test:remAdminRoleAPI ",
+    "test:cypress": "npm run test:addAdminRoleAPI && cypress run --config-file ./testing/cypress.json ",
     "test:jest": "jest --coverage --no-cache --config ./testing/jest.config.js",
     "merge:coverage": "node ./testing/mergeCoverage.js",
-    "test:all": "npm run lint && npm run pretty-check && npm run test:jest && npm run test:cypress && npm run merge:coverage",
+    "test:addAdminRoleAPI": "node ./testing/adminRoleAdd.js",
+    "test:remAdminRoleAPI": "node ./testing/adminRoleRemove.js",
+    "test:all": "npm run build && npm run pretty && npm run seed && npm run pretty-check && npm run test:jest && npm run test:cypress && npm run merge:coverage && npm run test:remAdminRoleAPI",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -54,7 +56,7 @@
     "@types/react": "17.0.37",
     "babel-jest": "^27.3.1",
     "babel-plugin-istanbul": "^6.1.1",
-    "cypress": "^9.1.0",
+    "cypress": "^9.1.1",
     "cypress-social-logins": "^1.11.3",
     "dotenv": "10.0.0",
     "eslint": "8.4.1",
@@ -82,13 +84,16 @@
       "!**/*.d.ts",
       "!**/node_modules/**",
       "!**/.next/**",
-      "!**/cypress/**",
+      "!**/testing/**",
       "!**/coverage/**",
+      "!**/coverage_jest/**",
+      "!**/coverage_cypress/**",
       "!jest.config.js",
       "!next.config.js",
       "!**/mergeCoverage.js",
       "!**/__coverage__.js",
-      "!**/seed.ts"
+      "!**/seed.ts",
+      "!**/check_google.ts"
     ]
   },
   "lint-staged": {

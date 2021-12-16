@@ -27,12 +27,6 @@ function LoadingSpinner() {
     router.events.on("routeChangeStart", handleRouteChange);
     router.events.on("routeChangeComplete", routeChangeComplete);
     setIsLoading(false);
-
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChange);
-      router.events.off("routeChangeComplete", routeChangeComplete);
-      document.removeEventListener("DOMContentLoaded", routeChangeComplete);
-    };
   }, [router.events]);
 
   return (

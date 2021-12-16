@@ -51,7 +51,7 @@ export default async function handler(
         const userRoles = (await UserRoles.find({ user: user.email })).rows[0]
           ?.roles;
 
-        if (!userRoles) return false;
+        if (!userRoles || userRoles.length === 0) return false;
 
         return true;
       },

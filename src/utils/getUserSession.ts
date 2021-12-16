@@ -24,12 +24,11 @@ async function getUserSession(req: NextApiRequest) {
     if (user && user.roles && user.roles.indexOf(role) > -1) return true;
     return false;
   };
+
   const hasNoRole = (role: string) => {
-    if (!user) return true;
-    if (user && user.roles && user.roles.indexOf("ADMIN") > -1) return false;
-    if (user && user.roles && user.roles.indexOf(role) > -1) return false;
-    return true;
+    return !hasRole(role);
   };
+
   const noPermission = { props: { noPermission: true } };
 
   const userToReturn = {

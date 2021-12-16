@@ -6,6 +6,8 @@ module.exports = {
     "!**/.next/**",
     "!**/testing/**",
     "!**/coverage/**",
+    "!**/coverage_jest/**",
+    "!**/coverage_cypress/**",
     "!jest.config.js",
     "!next.config.js",
     "!**/mergeCoverage.js",
@@ -15,7 +17,7 @@ module.exports = {
   ],
   collectCoverage: true,
   coverageDirectory: "./coverage_jest",
-  coverageReporters: ["json"],
+  coverageReporters: ["json", "lcov"],
   moduleNameMapper: {
     /* Handle CSS imports (with CSS modules)
       https://jestjs.io/docs/webpack#mocking-css-modules */
