@@ -1,6 +1,11 @@
-import { Schema, model } from "ottoman";
+import { Schema, model, ModelTypes } from "ottoman";
 import { modelsType, ottoman } from "../db";
 import { UserProfileSchema } from "./UserProfile";
+
+export interface UserRolesIF {
+  user: string;
+  roles: string[];
+}
 
 const UserRolesSchema = new Schema({
   user: { type: UserProfileSchema, ref: "UserProfile" },
@@ -8,7 +13,8 @@ const UserRolesSchema = new Schema({
 });
 
 const models = ottoman.models as modelsType;
-const UserRolesModel = models.UserRoles || model("UserRoles", UserRolesSchema);
+const UserRolesModel: ModelTypes<UserRolesIF, any> =
+  models.UserRoles || model("UserRoles", UserRolesSchema);
 
 export { UserRolesSchema };
 export default UserRolesModel;

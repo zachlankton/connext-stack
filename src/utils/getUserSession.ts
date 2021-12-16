@@ -1,9 +1,15 @@
 import { NextApiRequest } from "next";
 import { getSession } from "next-auth/react";
 
+interface userIF {
+  email: string;
+  name: string;
+  image: string;
+}
+
 interface userSessionType {
   expires: string;
-  user: {};
+  user: userIF;
   roles: string[];
   // eslint-disable-next-line no-unused-vars
   hasRole(role: string): boolean;
@@ -31,8 +37,12 @@ async function getUserSession(req: NextApiRequest) {
 
   const noPermission = { props: { noPermission: true } };
 
-  const userToReturn = {
-    user: {},
+  const userToReturn: userSessionType = {
+    user: {
+      email: "",
+      name: "",
+      image: "",
+    },
     expires: "",
     roles: [],
     hasRole,
