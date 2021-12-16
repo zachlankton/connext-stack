@@ -3,7 +3,7 @@ import { AgGridColumn, AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 import Models from "@/models/index";
-import UserProfileForm from "@/components/UserProfileForm";
+import UserProfileForm from "@/components/UserAdminForm";
 import { useState } from "react";
 import { getFormSubmission } from "src/utils/connextForm";
 import Img from "@/components/utils/CachedImg";
@@ -88,7 +88,7 @@ export async function getServerSideProps(context: any) {
   if (user.notLoggedIn || user.hasNoRole("ADMIN")) return user.noPermission;
 
   const formData = await getFormSubmission(context.req);
-  if (formData) return handleForm(formData);
+  if (formData) return await handleForm(formData);
 
   const users = (await Models.UserProfile.find(undefined, { lean: true })).rows;
   const roles = (await Models.UserRoles.find(undefined, { lean: true })).rows;
@@ -96,8 +96,25 @@ export async function getServerSideProps(context: any) {
   return { props: { users, roles } };
 }
 
-function handleForm(formData: any) {
-  console.log(formData);
+async function handleForm(formData: any) {
+  const user = new Models.UserProfile(formData.user);
+  const roles = new Models.UserRoles(formData.roles);
 
-  return { props: { data: formData } };
+  try {
+    const savedUser = await user.save();
+    const savedRoles = await roles.save();
+
+    const data = {
+      user: fixObj(savedUser),
+      roles: fixObj(savedRoles),
+    };
+
+    return { props: { ...data, success: true } };
+  } catch (e: any) {
+    throw new Error(e.message);
+  }
+}
+
+function fixObj(obj: any) {
+  return JSON.parse(JSON.stringify(obj.toJSON()));
 }

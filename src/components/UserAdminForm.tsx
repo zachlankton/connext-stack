@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { connextFormSubmit } from "src/utils/connextForm";
 import Img from "@/components/utils/CachedImg";
+import ToastComponent from "@/components/utils/Toast";
 
 export default function UserProfileForm(props: any) {
   const { user, roles } = props.user;
+  const { toast, Toast } = ToastComponent();
   const [rolesList, setRolesList] = useState(roles);
 
   const addRole = (ev: any) => {
@@ -13,12 +15,15 @@ export default function UserProfileForm(props: any) {
   };
 
   const handleSubmit = async (ev: any) => {
-    const res = await connextFormSubmit(ev);
-    console.log(res);
+    const res: any = await connextFormSubmit(ev);
+    if (res.success) return toast("success");
+    toast("error");
   };
 
   return (
     <>
+      <Toast />
+
       <h3>User Profile Form</h3>
       <div>
         <form onSubmit={handleSubmit} method="post">
