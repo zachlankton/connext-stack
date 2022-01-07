@@ -6,8 +6,7 @@ This is meant to be an opinionated quick start template with batteries included.
 ## Table of Contents:
 
 - [Getting Started](#getting-started)
-- [Quick Start Devcontainer](#quick-start-devcontainer)
-- [Manual Installation](#manual-installation)
+- [Installation](#installation)
 - [Running Development Server](#running-the-development-server)
 - [Build and Deploy](#build-and-deploy)
 - [Environment Vars](#environment-vars)
@@ -22,45 +21,7 @@ First click `Use This Template` above the file list to effectively create a clon
 
 ![Use this Template](https://docs.github.com/assets/images/help/repository/use-this-template-button.png)
 
-# Quick Start Devcontainer
-
-This repo comes with a VS Code devcontainer configuration that allows for quick turnkey multicontainer dev environment setup that includes couchbase/server-sandbox. To use this you can use [github codespaces](https://docs.github.com/en/codespaces) (costs money) or use [VS Code and remote - containers extension](https://code.visualstudio.com/docs/remote/containers) and [docker](https://docs.docker.com/get-docker/) `Note: Cypress Test GUI (npm run cypress) does not work inside a devcontainer, but headless testing does (npm run test:cypress)`
-
-### Steps Overview
-
-1. Open a new window in VS Code
-2. Press F1 to bring up the command pallette
-3. type in `clone repo in container` press enter
-4. type in your github repo and press enter
-5. Wait awhile and Profit!
-
----
-
-### Steps Detailed
-
----
-
-### Steps 1-3
-
-Open a new window in VS Code and hit `F1` key to bring up the command pallette and type in `clone repo in container` and hit enter and you will be prompted to enter the repo name or url:
-
-![VS Code Clone Repo in Container](https://code.visualstudio.com/assets/docs/remote/containers/vscode-remote-try-node.png)
-
----
-
-### Steps 4-5
-
-Enter the name of your repo that you created in the first step when you cloned the template and hit enter. You should see this pop up in the lower right corner of your editor, you can click on the blue highlighted "Starting with Dev Container" link to pull up the terminal output to see the progress. I recommend doing this as it can take a fair bit of time to set this up for the first time.
-
-![VS Code Starting in Container](https://code.visualstudio.com/assets/docs/remote/containers/dev-container-progress.png)
-
-If all went well you should see something like this:
-
-![connext-devcontainer-success](https://user-images.githubusercontent.com/2927894/142852771-fa1e5dbd-f118-4482-8d10-58501aada2f0.PNG)
-
----
-
-# Manual Installation
+# Installation
 
 ## Prerequisites
 
@@ -204,7 +165,6 @@ You can then run `npm run cypress` to open the GUI and watch the test run, a sep
 
 The following additional goodies are included in this package:
 
-- Quickstart with devcontainer config!
 - Typescript (Just learn it! It is totally worth it!)
 - Github Pages with Jekyll (in `docs` folder)
 - Ottoman ODM DB Config with Seed file (found in `src/db`)
