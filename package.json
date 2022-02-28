@@ -38,7 +38,7 @@
     "@reduxjs/toolkit": "^1.6.2",
     "ag-grid-community": "^26.2.0",
     "ag-grid-react": "^26.2.0",
-    "next": "^12.0.9",
+    "next": "^12.1.0",
     "next-auth": "^4.0.2",
     "next-auth-couchbase-adapter": "^0.0.7",
     "ottoman": "npm:@zachwritescode/ottoman@^2.0.1",
